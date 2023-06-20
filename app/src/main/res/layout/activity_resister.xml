@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResisterActivity"
+    android:orientation="vertical">
+
+    <android.widget.Toolbar
+        android:id="@+id/resisterToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_secondary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resister"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/details"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="@string/details"
+            android:layout_gravity="end"
+            android:backgroundTint="#03DAC6" />
+
+    </android.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/project"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/selectedName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/selected_name"
+        android:textSize="20sp"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:text="@string/year"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:text="@string/time" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:textSize="40sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/work"
+        android:layout_width="256dp"
+        android:layout_height="90dp"
+        android:text="@string/work"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/rest"
+        android:layout_width="256dp"
+        android:layout_height="90dp"
+        android:text="@string/rest"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/leave"
+        android:layout_width="256dp"
+        android:layout_height="90dp"
+        android:text="@string/leave"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

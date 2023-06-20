@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Attendance</string>
+    <string name="login">ログイン</string>
+    <string name="choice">ユーザーを選択してください。</string>
+    <string name="login_button">ログインする</string>
+    <string name="no_user">ユーザーを登録してください</string>
+    <string name="resister">勤怠登録</string>
+    <string name="project">新人研修プロジェクト</string>
+    <string name="selected_name">名前</string>
+    <string name="year">yyyy/mm/dd</string>
+    <string name="time">hh:mm:ss</string>
+    <string name="status"> </string>
+    <string name="work">勤務中</string>
+    <string name="rest">休憩中</string>
+    <string name="leave">退勤</string>
+    <string name="details">︙</string>
+    <string name="attendance_confirmation">出勤状況の確認</string>
+    <string name="newproject">新人研修プロジェクト</string>
+    <string name="okuyama">奥山 博文</string>
+    <string name="kobayashi">小林 大樹</string>
+    <string name="yogi">与儀 武志</string>
+    <string name="tamura">田村 真司</string>
+    <string name="minowa">箕輪琢磨</string>
+    <string name="rokuhara">六原大地</string>
+    <string name="history">勤怠履歴</string>
+    <string name="history_pro">(新人研修プロジェクト)</string>
+    <string name="def">YYYY/MM/DD  HH:MM  STATUS</string>
+</resources>
