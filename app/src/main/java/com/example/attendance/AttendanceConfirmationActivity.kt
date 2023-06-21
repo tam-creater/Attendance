@@ -20,7 +20,9 @@ class AttendanceConfirmationActivity : AppCompatActivity() {
             "与儀 武志",
             "田村 真司",
             "箕輪 琢磨",
-            "六原 大地")
+            "六原 大地"
+        )
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendance_confirmation)
 
@@ -29,6 +31,9 @@ class AttendanceConfirmationActivity : AppCompatActivity() {
 
         val rLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = rLayoutManager
+
+        val adapter: MyAdapter = MyAdapter(dataset)
+        recyclerView.adapter = adapter
 
         //ユーザー名の取得
         val selectedName = intent.getStringExtra("NAME")
