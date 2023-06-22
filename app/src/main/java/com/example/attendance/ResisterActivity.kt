@@ -2,6 +2,7 @@ package com.example.attendance
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -15,6 +16,7 @@ import android.widget.TextView
 import java.util.Calendar
 
 class ResisterActivity : AppCompatActivity() {
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,14 +51,20 @@ class ResisterActivity : AppCompatActivity() {
         workBtn.setOnClickListener {
             status.text = workBtn.text
         }
+        workBtn.setBackgroundColor(Color.GREEN)
+        workBtn.setTextColor(Color.BLACK)
         val restBtn: Button = findViewById(R.id.rest)
         restBtn.setOnClickListener {
             status.text = restBtn.text
         }
+        restBtn.setBackgroundColor(Color.YELLOW)
+        restBtn.setTextColor(Color.BLACK)
         val leaveBtn: Button = findViewById(R.id.leave)
         leaveBtn.setOnClickListener {
             status.text = leaveBtn.text
         }
+        leaveBtn.setBackgroundColor(Color.RED)
+        leaveBtn.setTextColor(Color.BLACK)
 
         //メニューポップアップ
         val button: Button = findViewById(R.id.details)
@@ -73,10 +81,7 @@ class ResisterActivity : AppCompatActivity() {
             button.text = menuItem.title
             if (id == 0) {
                 val intent: Intent = Intent(this, AttendanceConfirmationActivity::class.java)
-                intent.putExtra("CONFORM", status.text.toString())
                 intent.putExtra("NAME", selectedName.text.toString())
-                intent.putExtra("YEAR", year.text.toString())
-                intent.putExtra("TIME", time.text.toString())
                 startActivity(intent)
             }
             false
