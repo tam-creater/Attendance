@@ -21,9 +21,12 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        //名前の変更
+        //選択された名前
         val selectedName: TextView = findViewById(R.id.historyName)
-        selectedName.text = intent.getStringExtra("NAME")
+        selectedName.text = intent.getStringExtra("SELECTED")
+        println("------------")
+        println(selectedName.text.toString())
+        println("------------")
 
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
         recyclerView.setHasFixedSize(true)

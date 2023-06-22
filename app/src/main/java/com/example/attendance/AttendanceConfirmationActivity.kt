@@ -20,10 +20,7 @@ class AttendanceConfirmationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendance_confirmation)
 
-
-        val selectedName = intent.getStringExtra("NAME")
-
-
+        //RecycleViewリストの設定
         val recyclerView: RecyclerView = findViewById(R.id.my_recycler_view)
         recyclerView.setHasFixedSize(true)
 

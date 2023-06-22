@@ -9,6 +9,16 @@ import android.widget.Spinner
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
+
+    //データベースからデータの獲得？
+    private val dataset: ArrayList<String> = arrayListOf(
+        "奥山 博文",
+        "小林 大樹",
+        "与儀 武志",
+        "田村 真司",
+        "箕輪 琢磨",
+        "六原 大地"
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -18,12 +28,10 @@ class LoginActivity : AppCompatActivity() {
         //スピナーのプルダウンの設定
         val adapter:ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        adapter.add("奥山 博文")
-        adapter.add("小林 大樹")
-        adapter.add("与儀 武志")
-        adapter.add("田村 真司")
-        adapter.add("箕輪 琢磨")
-        adapter.add("六原 大地")
+        adapter.add("未登録")
+        for(i in 0 until dataset.size) {
+            adapter.add(dataset[i])
+        }
         val spinner:Spinner = findViewById(R.id.spinner)
         spinner.adapter = adapter
 

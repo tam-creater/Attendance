@@ -26,4 +26,6 @@
     <string name="history_pro">(新人研修プロジェクト)</string>
     <string name="def">YYYY/MM/DD  HH:MM  STATUS</string>
     <string name="toLogin">ログイン画面に戻る</string>
+    <string name="user_change">ログインユーザーの変更</string>
+    <string name="change">変更</string>
 </resources>

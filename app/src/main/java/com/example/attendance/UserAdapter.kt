@@ -31,7 +31,7 @@ class UserAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.
             val intent = Intent(itemView.context, HistoryActivity::class.java)
             for(i in 0 until attendance.dataset.size) {
                 if(position == i) {
-                    intent.putExtra("NAME", attendance.dataset[i])
+                    intent.putExtra("SELECTED", attendance.dataset[i])
                 }
             }
             itemView.context.startActivity(intent)
