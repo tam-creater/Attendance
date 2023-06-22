@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private var localDataset: ArrayList<String> = dataset
 
@@ -22,14 +22,14 @@ class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
         val itemView: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.my_test_view, parent, false)
-        val holder = MyAdapter.ViewHolder(itemView)
+            LayoutInflater.from(parent.context).inflate(R.layout.user, parent, false)
+        val holder = UserAdapter.ViewHolder(itemView)
         return holder
     }
 
-    override fun onBindViewHolder(holder: MyAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
         holder.getTextView().text = localDataset[position]
     }
 

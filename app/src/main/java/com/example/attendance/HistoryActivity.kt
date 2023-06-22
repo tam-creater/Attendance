@@ -31,7 +31,7 @@ class HistoryActivity : AppCompatActivity() {
         val rLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = rLayoutManager
 
-        val adapter: MyAdapter = MyAdapter(dataset)
+        val adapter: UserAdapter = UserAdapter(dataset)
         recyclerView.adapter = adapter
 
         //メニューポップアップ

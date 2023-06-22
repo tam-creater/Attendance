@@ -4,14 +4,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class UserAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private var localDataset: ArrayList<String> = dataset
-    val attendence = AttendanceConfirmationActivity()
+    val attendance = AttendanceConfirmationActivity()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val textView: TextView
@@ -25,18 +24,23 @@ class MyAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.View
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.my_test_view, parent,false)
+        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.user, parent,false)
         val holder =  ViewHolder(itemView)
+        val position = holder.absoluteAdapterPosition
         holder.itemView.setOnClickListener {
-            val position = holder.absoluteAdapterPosition
             val intent = Intent(itemView.context, HistoryActivity::class.java)
-            for(i in 0 until attendence.dataset.size) {
+            for(i in 0 until attendance.dataset.size) {
                 if(position == i) {
-                    intent.putExtra("NAME", attendence.dataset[i])
+                    intent.putExtra("NAME", attendance.dataset[i])
                 }
             }
             itemView.context.startActivity(intent)
         }
+        /*for(i in 0 until attendence.dataset.size) {
+            if(attendence.selectedName == attendence.dataset[i]) {
+
+            }
+        }*/
         return holder
     }
 

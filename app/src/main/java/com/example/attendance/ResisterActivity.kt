@@ -91,6 +91,10 @@ class ResisterActivity : AppCompatActivity() {
                 val intent: Intent = Intent(this, AttendanceConfirmationActivity::class.java)
                 intent.putExtra("NAME", selectedName.text.toString())
                 startActivity(intent)
+            } else if(id == 2) {
+                val intent = Intent(this,ChangeUserActivity::class.java)
+                intent.putExtra("NAME", selectedName.text.toString())
+                startActivity(intent)
             }
             false
         }
