@@ -5,6 +5,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -14,6 +17,7 @@ import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.TextView
 import java.util.Calendar
+import kotlin.concurrent.timer
 
 class ResisterActivity : AppCompatActivity() {
 
@@ -26,22 +30,26 @@ class ResisterActivity : AppCompatActivity() {
         val selectedName: TextView = findViewById(R.id.selectedName)
         selectedName.text = intent.getStringExtra("NAME")
 
-        //年月日
-        val cal = Calendar.getInstance()
-        val year:TextView = findViewById(R.id.year)
-        year.text = "%4d/%02d/%02d".format(
-            cal.get(Calendar.YEAR),
-            cal.get(Calendar.MONTH) + 1,
-            cal.get(Calendar.DAY_OF_MONTH)
-        )
+        val handler = Handler(Looper.myLooper()!!)
+        timer(period = 1000) {
 
-        //時間
-        val time:TextView = findViewById(R.id.time)
-        time.text = "%02d:%02d:%02d".format(
-            cal.get(Calendar.HOUR_OF_DAY),
-            cal.get(Calendar.MINUTE),
-            cal.get(Calendar.SECOND)
-        )
+            //年月日
+            val cal = Calendar.getInstance()
+            val year:TextView = findViewById(R.id.year)
+            handler.post {year.text = "%4d/%02d/%02d".format(
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH) + 1,
+                cal.get(Calendar.DAY_OF_MONTH)
+            ) }
+
+            //時間
+            val time:TextView = findViewById(R.id.time)
+            handler.post {time.text = "%02d:%02d:%02d".format(
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                cal.get(Calendar.SECOND)
+            )}
+        }
 
         //現在のステータス
         val status:TextView = findViewById(R.id.status)

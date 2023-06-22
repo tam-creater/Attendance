@@ -25,7 +25,9 @@
             android:layout_height="56dp"
             android:text="@string/details"
             android:layout_gravity="end"
-            android:backgroundTint="#03DAC6" />
+            android:backgroundTint="#03DAC6"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
     </android.widget.Toolbar>
 
     <LinearLayout

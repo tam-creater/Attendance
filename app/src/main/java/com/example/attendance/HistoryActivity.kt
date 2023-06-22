@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HistoryActivity : AppCompatActivity() {
 
-    val dataset: ArrayList<String> = arrayListOf(
+    private val dataset: ArrayList<String> = arrayListOf(
         "2023/06/22  10:17:32  勤務中",
-        "2023/06/20  15:23:80  退勤" ,
+        "2023/06/20  15:23:80  退勤",
         "2023/06/19  13:09:08  休憩中"
     )
     override fun onCreate(savedInstanceState: Bundle?) {
