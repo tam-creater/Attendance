@@ -18,6 +18,14 @@
             android:layout_height="wrap_content"
             android:text="@string/history"
             android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/toLogin"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="@string/details"
+            android:layout_gravity="end"
+            android:backgroundTint="#03DAC6" />
     </android.widget.Toolbar>
 
     <LinearLayout
@@ -41,63 +49,12 @@
             android:textSize="25sp"
             android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:id="@+id/history1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:id="@+id/history2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/history3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/history4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/history5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/history6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/history7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/def"
-            android:textSize="25sp"
-            android:layout_marginTop="16dp"/>
-
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:scrollbars="vertical" />
 
     </LinearLayout>
 

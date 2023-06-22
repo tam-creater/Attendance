@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
-    private var localDataset: ArrayList<String>
+    private var localDataset: ArrayList<String> = dataset
     val attendence = AttendanceConfirmationActivity()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -24,11 +24,6 @@ class MyAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.View
         }
 
     }
-
-    init {
-        localDataset = dataset
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.my_test_view, parent,false)
         val holder =  ViewHolder(itemView)

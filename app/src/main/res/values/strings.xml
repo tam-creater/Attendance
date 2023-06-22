@@ -25,4 +25,5 @@
     <string name="history">勤怠履歴</string>
     <string name="history_pro">(新人研修プロジェクト)</string>
     <string name="def">YYYY/MM/DD  HH:MM  STATUS</string>
+    <string name="toLogin">ログイン画面に戻る</string>
 </resources>
