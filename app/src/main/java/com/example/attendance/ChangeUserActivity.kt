@@ -27,7 +27,7 @@ class ChangeUserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_change_user)
 
         //ログインされている名前の獲得
-        val selectedName = intent.getStringExtra("NAME")
+        val changeName = intent.getStringExtra("NAME")
 
         val btn: Button = findViewById(R.id.change)
 
@@ -37,7 +37,7 @@ class ChangeUserActivity : AppCompatActivity() {
         for(i in 0 until dataset.size) {
             adapter.add(dataset[i])
         }
-        adapter.remove(selectedName)
+        adapter.remove(changeName)
         val spinner:Spinner = findViewById(R.id.spinner)
         spinner.adapter = adapter
 

@@ -19,11 +19,14 @@ class LoginActivity : AppCompatActivity() {
         "箕輪 琢磨",
         "六原 大地"
     )
+    //参加しているプロジェクトの数
+    private val joinedProject = 1
+    //プロジェクトを設定しているか
+    private val projectExistence = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        val btn: Button = findViewById(R.id.button)
 
         //スピナーのプルダウンの設定
         val adapter:ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item)
@@ -36,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
         spinner.adapter = adapter
 
         //ログインボタンの処理
+        val btn: Button = findViewById(R.id.button)
         btn.setOnClickListener {
             if(spinner.selectedItem == "未登録") {
                 val mySnackbar = Snackbar.make(
@@ -43,12 +47,19 @@ class LoginActivity : AppCompatActivity() {
                     R.string.no_user,
                     Snackbar.LENGTH_SHORT
                 ).show()
-            } else {
+            } else if(joinedProject == 0) { //現在参加しているプロジェクトがない場合
+                val intent = Intent(this, FinishActivity::class.java)
+                startActivity(intent)
+            } else if(projectExistence) { //参加しているプロジェクトがあり、設定している場合
                 val intent: Intent = Intent(this,ResisterActivity::class.java)
+                intent.putExtra("NAME", spinner.selectedItem as String)
+                intent.putExtra("PRO", "新人研修プロジェクト")
+                startActivity(intent)
+            } else {//参加しているプロジェクトはあるが設定がまだな場合
+                val intent = Intent(this, ProjectActivity::class.java)
                 intent.putExtra("NAME", spinner.selectedItem as String)
                 startActivity(intent)
             }
-
         }
     }
 }

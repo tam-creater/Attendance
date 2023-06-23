@@ -28,4 +28,10 @@
     <string name="toLogin">ログイン画面に戻る</string>
     <string name="user_change">ログインユーザーの変更</string>
     <string name="change">変更</string>
+    <string name="nochoice">プロジェクトが見つかりませんでした。</string>
+    <string name="finish_button">アプリを終了する</string>
+    <string name="application">勤怠登録アプリ</string>
+    <string name="project_title">勤怠入力先プロジェクト設定</string>
+    <string name="project_choice">プロジェクトを選択してください。</string>
+    <string name="project_button">登録する</string>
 </resources>

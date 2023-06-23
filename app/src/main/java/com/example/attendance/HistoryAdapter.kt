@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+//HistoryActivityのリサイクラービューの設定
+class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 
     private var localDataset: ArrayList<String> = dataset
 
@@ -22,14 +23,13 @@ class HistoryAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapt
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.user, parent, false)
-        val holder = UserAdapter.ViewHolder(itemView)
-        return holder
+            LayoutInflater.from(parent.context).inflate(R.layout.history, parent, false)
+        return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.getTextView().text = localDataset[position]
     }
 

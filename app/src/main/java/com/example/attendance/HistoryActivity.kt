@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HistoryActivity : AppCompatActivity() {
 
+    //データの獲得
     private val dataset: ArrayList<String> = arrayListOf(
         "2023/06/22  10:17:32  勤務中",
         "2023/06/20  15:23:80  退勤",
@@ -22,19 +23,20 @@ class HistoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_history)
 
         //選択された名前
-        val selectedName: TextView = findViewById(R.id.historyName)
-        selectedName.text = intent.getStringExtra("SELECTED")
+        val historyName: TextView = findViewById(R.id.historyName)
+        historyName.text = intent.getStringExtra("SELECTED")
         println("------------")
-        println(selectedName.text.toString())
+        println(historyName.text.toString())
         println("------------")
 
+        //リサイクラービューの設定
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
         recyclerView.setHasFixedSize(true)
 
         val rLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = rLayoutManager
 
-        val adapter: UserAdapter = UserAdapter(dataset)
+        val adapter: HistoryAdapter = HistoryAdapter(dataset)
         recyclerView.adapter = adapter
 
         //メニューポップアップ

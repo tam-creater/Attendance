@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AttendanceConfirmationActivity : AppCompatActivity() {
 
+    //データベースからデータの獲得
     val dataset: ArrayList<String> = arrayListOf(
         "奥山 博文",
         "小林 大樹",
@@ -20,14 +21,14 @@ class AttendanceConfirmationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendance_confirmation)
 
-        //RecycleViewリストの設定
+        //リサイクラービューの設定
         val recyclerView: RecyclerView = findViewById(R.id.my_recycler_view)
         recyclerView.setHasFixedSize(true)
 
         val rLayoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = rLayoutManager
 
-        val adapter: UserAdapter = UserAdapter(dataset)
+        val adapter: AttendanceConfirmationAdapter = AttendanceConfirmationAdapter(dataset)
         recyclerView.adapter = adapter
     }
 }

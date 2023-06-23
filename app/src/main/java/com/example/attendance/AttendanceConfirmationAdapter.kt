@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class UserAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+//AttendanceConfirmationActivityのリサイクラービューの設定
+class AttendanceConfirmationAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<AttendanceConfirmationAdapter.ViewHolder>() {
 
     private var localDataset: ArrayList<String> = dataset
     val attendance = AttendanceConfirmationActivity()
@@ -24,23 +25,16 @@ class UserAdapter(dataset: ArrayList<String>): RecyclerView.Adapter<UserAdapter.
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.user, parent,false)
+        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.attendance_confirmation, parent,false)
         val holder =  ViewHolder(itemView)
         val position = holder.absoluteAdapterPosition
         holder.itemView.setOnClickListener {
             val intent = Intent(itemView.context, HistoryActivity::class.java)
-            for(i in 0 until attendance.dataset.size) {
-                if(position == i) {
-                    intent.putExtra("SELECTED", attendance.dataset[i])
-                }
-            }
+            println("-------")
+            println(position)
+            println("-------")
             itemView.context.startActivity(intent)
         }
-        /*for(i in 0 until attendence.dataset.size) {
-            if(attendence.selectedName == attendence.dataset[i]) {
-
-            }
-        }*/
         return holder
     }
 

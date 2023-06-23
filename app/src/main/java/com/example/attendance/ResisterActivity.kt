@@ -26,10 +26,13 @@ class ResisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resister)
 
-        //選択された名前の表示
+        //選択された名前とプロジェクトの表示
         val selectedName: TextView = findViewById(R.id.selectedName)
+        val selectedPro: TextView = findViewById(R.id.project)
         selectedName.text = intent.getStringExtra("NAME")
+        selectedPro.text = intent.getStringExtra("PRO")
 
+        //リアルタイムで時間を更新
         val handler = Handler(Looper.myLooper()!!)
         timer(period = 1000) {
 
@@ -88,7 +91,7 @@ class ResisterActivity : AppCompatActivity() {
             val id = menuItem.itemId
             button.text = menuItem.title
             if (id == 0) {
-                val intent: Intent = Intent(this, AttendanceConfirmationActivity::class.java)
+                val intent:Intent = Intent(this, AttendanceConfirmationActivity::class.java)
                 startActivity(intent)
             } else if(id == 2) {
                 val intent = Intent(this,ChangeUserActivity::class.java)
